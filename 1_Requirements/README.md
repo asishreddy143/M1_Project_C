@@ -90,4 +90,4 @@ It can help to improve a person's concentration as well as strategic thinking
 | LR6 | If the user with 'O' can't get 3 Os in vertical,horizontal or diagonal row, he'll lose. | HR4 |
 | LR7 | If the total number of moves, i.e., 9 moves have been completed and neither the user with 'X' nor the user with 'O' has won, it'll end up in a draw. | HR5 |
 
-*This data is extracted from a github source.
+*Some of the theoretical data is extracted from a github source.
