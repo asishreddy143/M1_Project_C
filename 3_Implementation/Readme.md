@@ -1,20 +1,15 @@
-/************************************************
 This program is a simple tic-tac-toe game.
-*************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
-
-/************************************************
- ** PROTOTYPES
- ************************************************/
 char** createboard();
 void print(char** Board);
 int isdraw(char** Board);
 char winningmove(char** Board, int i, int j);
 
-/************************************************
+
  ** MAIN FUNCTION
- ************************************************/
+
 int main() {
   char** Board = createboard();
   char winner = '\0';
@@ -57,9 +52,8 @@ int main() {
   return 0;
 }
 
-/************************************************
  ** FUNCTION DEFINITIONS
- ************************************************/
+
 // Creates the board with all squares init to ' '
 char** createboard() {
   char** B = calloc(3, sizeof(char*));
