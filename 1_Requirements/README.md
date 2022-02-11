@@ -75,20 +75,19 @@ It can help to improve a person's concentration as well as strategic thinking
 | ----- | ----- | 
 | HR1 | User shall be able to choose 'X' to play |
 | HR2 | User shall be able to choose 'O' to play |
-| HR3 | User shall lose|
-| HR4 | User shall win|
+| HR3 | User shall win|
+| HR4 | User shall lose|
 | HR5 | User shall end up in a Draw situation|
 ##  Low level Requirements:
  
 | ID | Description | HLR ID |
 | ------ | --------- | ------ |
-| LR1 | If the user presses '1', he'll be play with 'X'. | HR1 |
-| LR2 | If the user is playing with 'X', he'll get the first turn. | HR1 |
-| LR3 | If the user presses '2', he'll be play with 'O'. | HR2 |
-| LR4 | If the user is playing with 'O', he'll get the second turn. | HR2 |
-| LR5 | If the user presses '3', it'll exit the game. | HR3 |
-| LR6 | If the computer gets 3 Xs or 3 Os in vertical,horizontal or diagonal row, User will lose. | HR4 |
-| LR7 | If the user gets 3 Xs or 3 Os(as per his choice), in vertical,horizontal or diagonal row, he'll win. | HR5 |
-| LR8 | If the total number of moves, i.e., 9 moves have been completed and neithe the user nor the computer has won, it'll end up in a draw. | HR6 |
+| LR1 | If the user is playing with 'X', he'll get the first turn. | HR1 |
+| LR2 | If the user is playing with 'O', he'll get the second turn. | HR2 ||
+| LR3 | If the user with 'X' gets 3 Xs in vertical,horizontal or diagonal row, he'll win. | HR3 |
+| LR4 | If the user with 'O' gets 3 Os in vertical,horizontal or diagonal row, he'll win. | HR3 |
+| LR5 | If the user with 'X' can't get 3 Xs in vertical,horizontal or diagonal row, he'll lose. | HR4 |
+| LR6 | If the user with 'O' can't get 3 Os in vertical,horizontal or diagonal row, he'll lose. | HR4 |
+| LR7 | If the total number of moves, i.e., 9 moves have been completed and neither the user with 'X' nor the user with 'O' has won, it'll end up in a draw. | HR5 |
 
 *This data is extracted from a github source.
