@@ -36,14 +36,11 @@ It can help to improve a person's concentration as well as strategic thinking
 | 2000-2021 | After Digitalisation, this game is almost free for everyone on multiple mediums.| Cost-effective |
 
 ### Explanation:
-* The game starts giving you three input options(1, 2, 3):
-    * 1 means you play using 'X'.
-    * 2 means you play using 'O'.
-    * 3 means you exit the game.
+* The game starts giving you input options(A,B,C)(1, 2, 3):
+    * (A1,A2,A3,B1,B2,B3,C1,C2,C3)
 * The game ends when:
-    * It is in a draw situation , i.e, a total of 9 moves have been completed and novody has won.
-    * You win.
-    * The computer wins.
+    * It is in a draw situation , i.e, a total of 9 moves have been completed and nobody has won.
+    * Either player win.
 * The game continues in the beginning if the check for draw is false.
 * Then it checks if anyone has won yet.
 * If not, then it again checks if it is a draw situation.
@@ -76,23 +73,22 @@ It can help to improve a person's concentration as well as strategic thinking
 ## High Level Requirements: 
 | ID | Description | 
 | ----- | ----- | 
-| HR01 | User shall be able to choose 'X' to play |
-| HR02 | User shall be able to choose 'O' to play |
-| HR03 | User shall be able to Exit the game |
-| HR04 | User shall lose|
-| HR05 | User shall win|
-| HR06 | User shall end up in a Draw situation|
+| HR1 | User shall be able to choose 'X' to play |
+| HR2 | User shall be able to choose 'O' to play |
+| HR3 | User shall lose|
+| HR4 | User shall win|
+| HR5 | User shall end up in a Draw situation|
 ##  Low level Requirements:
  
 | ID | Description | HLR ID |
 | ------ | --------- | ------ |
-| LR01 | If the user presses '1', he'll be play with 'X'. | HR01 |
-| LR02 | If the user is playing with 'X', he'll get the first turn. | HR01 |
-| LR03 | If the user presses '2', he'll be play with 'O'. | HR02 |
-| LR04 | If the user is playing with 'O', he'll get the second turn. | HR02 |
-| LR05 | If the user presses '3', it'll exit the game. | HR03 |
-| LR06 | If the computer gets 3 Xs or 3 Os in vertical,horizontal or diagonal row, User will lose. | HR04 |
-| LR07 | If the user gets 3 Xs or 3 Os(as per his choice), in vertical,horizontal or diagonal row, he'll win. | HR05 |
-| LR08 | If the total number of moves, i.e., 9 moves have been completed and neithe the user nor the computer has won, it'll end up in a draw. | HR06 |
+| LR1 | If the user presses '1', he'll be play with 'X'. | HR1 |
+| LR2 | If the user is playing with 'X', he'll get the first turn. | HR1 |
+| LR3 | If the user presses '2', he'll be play with 'O'. | HR2 |
+| LR4 | If the user is playing with 'O', he'll get the second turn. | HR2 |
+| LR5 | If the user presses '3', it'll exit the game. | HR3 |
+| LR6 | If the computer gets 3 Xs or 3 Os in vertical,horizontal or diagonal row, User will lose. | HR4 |
+| LR7 | If the user gets 3 Xs or 3 Os(as per his choice), in vertical,horizontal or diagonal row, he'll win. | HR5 |
+| LR8 | If the total number of moves, i.e., 9 moves have been completed and neithe the user nor the computer has won, it'll end up in a draw. | HR6 |
 
-
+*This data is extracted from a github source.
