@@ -1,8 +1,4 @@
-![Code grade](https://api.codiga.io/project/31271/score/svg)
-
-![Code grade](https://api.codiga.io/project/31271/status/svg)
-
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/41a6a11988c541cf961abb01041d109e)](https://www.codacy.com/gh/asishreddy143/M1_Tic-Tac-Toe_Game/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=asishreddy143/M1_Tic-Tac-Toe_Game&amp;utm_campaign=Badge_Grade)
+![Code grade](https://api.codiga.io/project/31271/score/svg) ![Code grade](https://api.codiga.io/project/31271/status/svg) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/41a6a11988c541cf961abb01041d109e)](https://www.codacy.com/gh/asishreddy143/M1_Tic-Tac-Toe_Game/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=asishreddy143/M1_Tic-Tac-Toe_Game&amp;utm_campaign=Badge_Grade)
 
 ![asishreddy143](https://user-images.githubusercontent.com/42888048/153711806-a2eba5d2-b4ea-46a4-a9c0-801287207928.svg)
 
