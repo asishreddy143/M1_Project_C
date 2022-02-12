@@ -1,55 +1,45 @@
-/************************************************
-This program is a simple tic-tac-toe game.
-*************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 
-/************************************************
- ** PROTOTYPES
- ************************************************/
-char** createboard();
-void print(char** Board);
-int isdraw(char** Board);
-char winningmove(char** Board, int i, int j);
+char** creatematrix();
+void print(char** Matrix);
+int istie(char** Matrix);
+char victorystep(char** Matrix, int a, int b);
 
-/************************************************
- ** MAIN FUNCTION
- ************************************************/
 int main() {
-  char** Board = createboard();
-  char winner = '\0';
-  char row;
-  char col;
-  char turn = 'X';
+  char** Matrix = creatematrix();
+  char victory = '\0';
+  char line;
+  char column;
+  char chance = 'X';
 
-  while(!winner && !isdraw(Board)) {
-    print(Board);
-
-    // Read Move
-    printf("Player %c, make your move: ", turn);
+  while(!victory && !istie(Matrix)) {
+    printf("Mini Project-C Language\n");
+    printf("Let's Play Tic-Tac-Toe.\n");
+    print(Matrix);
+    printf("Player %c, make your move: ", chance);
     fflush(stdout);
-    scanf(" %c %c", &row, &col);
+    scanf(" %c %c", &line, &column);
 
-    // Make move if square is free
-    int rowind = row - 'A';
-    int colind = col - '1';
-    if (Board[rowind][colind] == ' ') {
-      Board[rowind][colind] = turn;
-      if (turn == 'X') {
-	turn = 'O';
+    int rowind = line - 'P';
+    int colind = column - '1';
+    if (Matrix[rowind][colind] == ' ') {
+      Matrix[rowind][colind] = chance;
+      if (chance == 'X') {
+	chance = 'O';
       } else {
-	turn = 'X';
+	chance = 'X';
       }
-      winner = winningmove(Board, rowind, colind);
+      victory = victorystep(Matrix, rowind, colind);
     } else {
-      printf("Square occupied; try again.\n");
+      printf("Block occupied; Please retry.\n");
     }
   }
 
-  // Game over - print board & declare finish
-  print(Board);
-  if (winner == 'X' || winner == 'O') {
-    printf("Congratulations %c!\n", winner);
+  print(Matrix);
+  if (victory == 'X' || victory == 'O') {
+    printf("Congratulations Player %c!\n", victory);
+    printf("Thank you for playing Tic-Tac-Toe\n");
   } else {
     printf("Game ends in a draw.\n");
   }
@@ -57,81 +47,65 @@ int main() {
   return 0;
 }
 
-/************************************************
- ** FUNCTION DEFINITIONS
- ************************************************/
-// Creates the board with all squares init to ' '
-char** createboard() {
-  char** B = calloc(3, sizeof(char*));
-  for(int i = 0; i < 3; ++i) {
-    B[i] = calloc(3, sizeof(char));
+char** creatematrix() {
+  char** Q = calloc(3, sizeof(char*));
+  for(int a = 0; a < 3; ++a) {
+    Q[a] = calloc(3, sizeof(char));
   }
 
-  for(int j=0; j < 3; ++j) {
-    for(int k=0; k < 3; ++k) {
-      B[j][k] = ' ';
+  for(int b=0; b < 3; ++b) {
+    for(int c=0; c < 3; ++c) {
+      Q[b][c] = ' ';
     }
   }
 
-  return B;
+  return Q;
 }
 
-// Prints the board
-void print(char** Board) {
+void print(char** Matrix) {
   printf(" |1|2|3|\n");
-  for(int i = 0; i < 3; ++i) {
-    printf("%c|", 'A' + i);
-    for(int j = 0; j < 3; ++j) {
-      printf("%c|", Board[i][j]);
+  for(int a = 0; a < 3; ++a) {
+    printf("%c|", 'P' + a);
+    for(int b = 0; b < 3; ++b) {
+      printf("%c|", Matrix[a][b]);
     }
     printf("\n");
   }
 }
 
-// Returns true if the game is a draw
-int isdraw(char** Board) {
-  for(int i = 0; i < 3; ++i) {
-    for(int j = 0; j < 3; ++j) {
-      if (Board[i][j] == ' ') {
-        // empty square, so game ain't over yet
+int istie(char** Matrix) {
+  for(int a = 0; a < 3; ++a) {
+    for(int b = 0; b < 3; ++b) {
+      if (Matrix[a][b] == ' ') {
         return 0;
       }
     }
   }
-  // no empty squares, so it's a draw
   return 1;
 }
 
-// Returns 'X' if (i,j) was a winning move for X
-// Returns 'Y' if (i,j) was a winning move for Y
-// Retruns ASCII value 0 otherwise
-char winningmove(char** Board, int i, int j) {
-  if (Board[i][j] == Board[i][(j+1)%3]
-   && Board[i][j] == Board[i][(j+2)%3])
+char victorystep(char** Matrix, int a, int b) {
+  if (Matrix[a][b] == Matrix[a][(b+1)%3]
+   && Matrix[a][b] == Matrix[a][(b+2)%3])
   {
-    // got a column
-    return Board[i][j];
+    return Matrix[a][b];
   }
-  else if (Board[i][j] == Board[(i+1)%3][j]
-          && Board[i][j] == Board[(i+2)%3][j])
+  else if (Matrix[a][b] == Matrix[(a+1)%3][b]
+          && Matrix[a][b] == Matrix[(a+2)%3][b])
   {
-    // got a row
-    return Board[i][j];
+    return Matrix[a][b];
   }
-  else if (i == j && Board[i][j] == Board[(i+1)%3][(j+1)%3]
-                  && Board[i][j] == Board[(i+2)%3][(j+2)%3])
+  else if (a == b && Matrix[a][b] == Matrix[(a+1)%3][(b+1)%3]
+                  && Matrix[a][b] == Matrix[(a+2)%3][(b+2)%3])
   {
-    // got the forward diagonal
-    return Board[i][j];
+    return Matrix[a][b];
   }
-  else if (i+j == 2 && Board[i][j] == Board[(i+2)%3][(j+1)%3]
-                    && Board[i][j] == Board[(i+1)%3][(j+2)%3])
+  else if (a+b == 2 && Matrix[a][b] == Matrix[(a+2)%3][(b+1)%3]
+                    && Matrix[a][b] == Matrix[(a+1)%3][(b+2)%3])
   {
-    // got the reverse diagonal
-    return Board[i][j];
+    return Matrix[a][b];
   }
   else {
-    // got nothing
     return 0;
   }
 }
