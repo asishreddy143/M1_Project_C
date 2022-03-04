@@ -1,7 +1,7 @@
 #TargetName : Dependencies
 #<TAB>commands
 
-Build : code.c
+Build : Code.c
 	gcc code.c -o code.out
 
 Run : code.out
